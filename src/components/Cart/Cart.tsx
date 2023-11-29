@@ -1,7 +1,9 @@
 import { ChangeEvent } from "preact/compat";
 import {
   cart,
+  grandTotal,
   removeFromCart,
+  tax,
   total,
   totalQuantity,
   updateCartItem,
@@ -34,6 +36,16 @@ export const Cart = () => {
         <div>Total</div>
         <div>{totalQuantity} items</div>
         <div>{formatCurrency(total.value)}</div>
+      </div>
+      <div className={styles.item}>
+        <div>Tax</div>
+        <div />
+        <div>{formatCurrency(tax.value)}</div>
+      </div>
+      <div className={styles.item}>
+        <div>Grand Total</div>
+        <div />
+        <div>{formatCurrency(grandTotal.value)}</div>
       </div>
     </div>
   );
