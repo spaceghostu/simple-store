@@ -7,22 +7,23 @@ export class Cart {
     this.total = 0;
   }
 
-  addToCart(item: any) {
+  addToCart(item: any, quantity: number) {
     const itemInCart = this.items.find(
       (cartItem) => cartItem.name === item.name,
     );
 
     if (itemInCart) {
-      itemInCart.quantity++;
+      itemInCart.quantity = itemInCart.quantity + quantity;
+      this.addToTotal(item.price * quantity);
     } else {
-      item = { ...item, quantity: 1 };
+      item = { ...item, quantity };
+      this.items.push(item);
+      this.addToTotal(item.price * quantity);
     }
-
-    this.addTotal(item);
   }
 
-  addTotal(item: any) {
-    this.total = this.total + item.price * item.quantity;
+  addToTotal(value) {
+    this.total = this.total + value;
   }
 
   getTotal() {
