@@ -1,0 +1,12 @@
+.list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  background-color: #ffffff22;
+  border-radius: 0.15rem;
+  border: 1px solid #ffffff33;
+}

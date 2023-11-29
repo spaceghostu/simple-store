@@ -1,0 +1,6 @@
+.shop {
+  --col-1-width: 280px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}

@@ -8,6 +8,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@preact/signals": "^1.2.2",
     "preact": "^10.13.1"
   },
   "devDependencies": {
