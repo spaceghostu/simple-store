@@ -2,7 +2,7 @@ import { cart } from "./state";
 import { Product } from "./types";
 
 export const addToCart = (
-  product: Exclude<Product, "quantity">,
+  product: Omit<Product, "quantity">,
   quantity: number = 1,
 ) => {
   const newProduct =
@@ -12,7 +12,7 @@ export const addToCart = (
 };
 
 export const updateCartItem = (
-  product: Exclude<Product, "quantity">,
+  product: Omit<Product, "quantity">,
   quantity: number,
 ) => {
   if (quantity <= 0) return removeFromCart(product);
@@ -24,7 +24,7 @@ export const updateCartItem = (
   cart.value = new Set([...cart.value, newProduct]);
 };
 
-export const removeFromCart = (product: Exclude<Product, "quantity">) => {
+export const removeFromCart = (product: Omit<Product, "quantity">) => {
   const newCart = new Set(cart.value);
   newCart.delete(product);
   cart.value = newCart;
