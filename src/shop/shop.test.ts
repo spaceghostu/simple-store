@@ -47,4 +47,14 @@ describe("Calculator", () => {
 
     expect(cart.getTotal()).toEqual(319.92);
   });
+  it("should add with multiple products", () => {
+    const dove = { name: "Dove Soap", price: 39.99 };
+    const axe = { name: "Axe Deo", price: 99.99 };
+
+    cart.addToCart(dove, 2);
+
+    cart.addToCart(axe, 2);
+
+    expect(cart.getTotalWithTax()).toEqual(314.96);
+  });
 });
